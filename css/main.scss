@@ -1,0 +1,232 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import
+  "bourbon/bourbon",
+  "base/base",
+  "neat/neat",
+  "grid_settings"
+;
+
+.typed-cursor{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 3em;
+    opacity: 0;
+    -webkit-animation: blink 1.25s 5;
+    -moz-animation: blink 1.25s 5;
+    animation: blink 1.25s 5;
+}
+@keyframes blink{
+    0% { opacity:0; }
+    50% { opacity:1; }
+    100% { opacity:0; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:0; }
+    50% { opacity:1; }
+    100% { opacity:0; }
+}
+@-moz-keyframes blink{
+    0% { opacity:0; }
+    50% { opacity:1; }
+    100% { opacity:0; }
+}
+
+#bash {
+    color: purple;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 3em;
+}
+
+#mirango {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 3em;
+}
+
+#mirango-io {
+  color: $blue;
+}
+
+#sdwalsh {
+  color: purple;
+}
+body {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlight {
+  font-family: 'Ubuntu Mono', monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  min-height: min-content;
+  margin-bottom: .9em;
+  code {
+    font-size: 1.1em;
+    overflow: auto;
+  }
+  pre {
+    margin: 0;
+  }
+  pre > code {
+    white-space: pre;
+  }
+}
+
+.site-header {
+  .wrapper {
+    font-family: 'Ubuntu Mono', monospace;
+    @include outer-container;
+    .site-title {
+      white-space: nowrap;
+      @include span-columns(6);
+       @include media ($tablet) {
+          text-align: center;
+          @include span-columns(12);
+        }
+        @include media ($mobile) {
+          text-align: center;
+          @include span-columns(12);
+        }
+    }
+    .site-nav {
+      @include span-columns(6);
+      whitespace: nowrap;
+      display: flex;
+      font-size: 1em;
+      .page-link {
+        margin: auto;
+        justify-content: space-between;
+        transform: translateY(180%);
+      }
+       @include media ($tablet) {
+          @include span-columns(12);
+          display: flex;
+          text-align: center;
+          transform: translateY(-180%);
+        }
+        @include media ($mobile) {
+          @include span-columns(12);
+          display: flex;
+          text-align: center;
+          transform: translateY(-180%);
+        }
+    }
+  }
+}
+
+blockquote {
+  font-family: 'Open Sans', sans-serif;
+  p {
+    code {
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+}
+
+.post-list {
+  li {
+    @include span-columns(12);
+    .post-info {
+      @include span-columns(10);
+      @include media ($tablet) {
+        @include span-columns(12);
+      }
+       @include media ($mobile) {
+        @include span-columns(12);
+      }
+    }
+    .post-meta {
+      @include span-columns(2);
+      font-size: 1em;
+      text-align: right;
+      @include media ($tablet) {
+        @include span-columns(12);
+      }
+      @include media ($mobile) {
+        @include span-columns(12);
+      }
+    }
+  }
+}
+
+.site-content {
+  .page-content {
+    @include outer-container;
+  }
+  @include span-columns(12);
+  padding: 1em;
+  font-family: 'Cantarell', sans-serif;
+  .post-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.75em;
+    text-align: center;
+  }
+  .post-meta {
+    .name::after {
+      content: ' – ';
+    }
+    font-size: .5em;
+    margin-bottom: 1em;
+  }
+  .post-content {
+    padding-top: 1em;
+  }
+  p > code {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    font-family: monospace;
+    padding: .2em;
+    background-color: #ecf0f1;
+  }
+}
+
+.site-footer {
+  a {
+    color: #FFCD64;
+    text-decoration: none;
+    transition: color $base-duration $base-timing;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade(#FFCD64, 25%);
+    }
+  }
+  .wrapper {
+    padding-top: 1em;
+    padding-bottom: .5em;
+    @include outer-container;
+    border-top: 1px solid #D2D7D3;
+    text-align: center;
+    .footer-wrapper {
+      padding-left: 1em;
+      padding-right: 1em;
+      font-size: .9em;
+      p {
+        margin-bottom: .1em;
+      }
+      strong {
+      }
+      ul {
+        padding-bottom: 1.5em;
+      }
+      .description {
+        font-family: monospace;
+        @include span-columns(12);
+        @include media ($tablet) {
+          @include span-columns(12);
+        }
+        @include media ($mobile) {
+          @include span-columns(12);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-wrapper">
+      
+      <div class="description">
+        <p>## <span id="mirango-io">mirango.io</span> [<span id="sdwalsh">sean walsh</span>] - all original code mit licensed - source on github ##</p>
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      </div>
+      
+    </div>
+
+  </div>
+
+</footer>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/main.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+  // Syntax highlighting
+  hljs.initHighlightingOnLoad();
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+
+});
+
+</script>
