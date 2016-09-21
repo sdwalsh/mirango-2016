@@ -141,6 +141,10 @@ blockquote {
        @include media ($mobile) {
         @include span-columns(12);
       }
+      h2 {
+        margin-bottom: 5px;
+      }
+      margin-bottom: 15px;
     }
     .post-meta {
       @include span-columns(2);
