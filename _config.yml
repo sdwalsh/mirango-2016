@@ -30,4 +30,4 @@ highlighter: rouge
 
 theme: minima
 
-exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile', 'README.md']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'bin', 'vendor', 'Procfile', 'Rakefile', 'README.md']
