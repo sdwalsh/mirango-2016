@@ -52,6 +52,7 @@
 #sdwalsh {
   color: purple;
 }
+
 body {
   padding-left: 10px;
   padding-right: 10px;
@@ -89,10 +90,12 @@ body {
        @include media ($tablet) {
           text-align: center;
           @include span-columns(12);
+          font-size: 1em;
         }
         @include media ($mobile) {
           text-align: center;
           @include span-columns(12);
+          font-size: 1em;
         }
     }
     .site-nav {
